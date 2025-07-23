@@ -1,0 +1,75 @@
+[
+  {
+    "battery": {
+      "format": "{icon} {capacity}%",
+      "format-icons": {
+        "charging": [
+          "󰂆",
+          "󰂈",
+          "󰂉",
+          "󰂊",
+          "󰂅"
+        ],
+        "default": [
+          "󰁻",
+          "󰁽",
+          "󰁿",
+          "󰂁",
+          "󰁹"
+        ],
+        "plugged": [
+          "󰂆",
+          "󰂈",
+          "󰂉",
+          "󰂊",
+          "󰂅"
+        ]
+      },
+      "states": {
+        "critical": 10,
+        "warning": 20
+      }
+    },
+    "clock": {
+      "format": "{:%I:%M}",
+      "interval": 60,
+      "max-length": 25,
+      "timezone": "Europe/Paris",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-active": " {icon} ",
+      "on-click": "activate"
+    },
+    "margin-bottom": -11,
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "tray",
+      "network",
+      "battery",
+      "clock"
+    ],
+    "network": {
+      "format": "{ifname}",
+      "format-disconnected": " 󰤭 Disconnected ",
+      "format-ethernet": "󰈀 Ethernet",
+      "format-icons": [
+        "󰤯",
+        "󰤟",
+        "󰤢",
+        "󰤥",
+        "󰤨"
+      ],
+      "format-linked": "󰈁 {ifname} (No IP)",
+      "format-wifi": "{icon} {essid}",
+      "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}"
+    },
+    "spacing": 5,
+    "tray": {
+      "spacing": 10
+    }
+  }
+]
