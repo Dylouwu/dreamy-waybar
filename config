@@ -31,16 +31,16 @@
       }
     },
     "clock": {
-      "format": "{:%I:%M}",
+      "format": "{:%H:%M}",
       "interval": 60,
       "max-length": 25,
       "timezone": "Europe/Paris",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+      "tooltip-format": "<big>{:%a %d %b}</big>"
     },
     "hyprland/workspaces": {
       "format": "{icon}",
       "format-active": " {icon} ",
-      "on-click": "activate"
+      "all-outputs": true,
     },
     "margin-bottom": -11,
     "modules-left": [
