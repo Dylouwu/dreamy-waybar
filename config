@@ -28,7 +28,8 @@
       "states": {
         "critical": 10,
         "warning": 20
-      }
+      },
+      "on-click" : "powerprofilesctl set balanced"
     },
     "clock": {
       "format": "{:%H:%M}",
@@ -63,6 +64,7 @@
         "󰤥",
         "󰤨"
       ],
+      "on-click": "kitty --class nmtui-float-term nmtui",
       "format-linked": "󰈁 {ifname} (No IP)",
       "format-wifi": "{icon} {essid}",
       "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}"
