@@ -46,7 +46,7 @@
     "hyprland/window": {
       "format" : "{}",
       "rewrite": {
-        "^(.*?)[[:space:]]*[-–—|:].*?$": "$1"
+        "^(.*?)[[:space:]]*[-—|].*?$": "$1"
       },
       "icon" : true,
       "icon-size" : 20
