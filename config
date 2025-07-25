@@ -25,31 +25,50 @@
           "󰂅"
         ]
       },
+      "on-click": "powermode-toggle",
       "states": {
         "critical": 10,
         "warning": 20
-      },
-      "on-click" : "powerprofilesctl set balanced"
+      }
     },
     "clock": {
-      "format": "{:%H:%M}",
       "interval": 60,
       "max-length": 25,
       "timezone": "Europe/Paris",
       "tooltip-format": "<big>{:%a %d %b}</big>"
     },
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "format-active": " {icon} ",
-      "all-outputs": true,
+    "custom/notification": {
+      "escape": true,
+      "exec": "swaync-client -swb",
+      "exec-if": "which swaync-client",
+      "format": "{icon} {}",
+      "format-icons": {
+        "dnd-inhibited-none": "󰂜",
+        "dnd-inhibited-notification": "󰂚",
+        "dnd-none": "󰂜",
+        "dnd-notification": "󰂚",
+        "inhibited-none": "󰂜",
+        "inhibited-notification": "󰂚",
+        "none": "󰂜",
+        "notification": "󰂚"
+      },
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "return-type": "json",
+      "tooltip": false
     },
     "hyprland/window": {
-      "format" : "{}",
+      "format": "{}",
+      "icon": true,
+      "icon-size": 20,
       "rewrite": {
         "^(.*?)[[:space:]]*[-—|].*?$": "$1"
-      },
-      "icon" : true,
-      "icon-size" : 20
+      }
+    },
+    "hyprland/workspaces": {
+      "all-outputs": true,
+      "format": "{icon}",
+      "format-active": " {icon} "
     },
     "margin-bottom": -11,
     "modules-left": [
@@ -60,6 +79,8 @@
       "tray",
       "network",
       "battery",
+      "group/extras",
+      "custom/notification",
       "clock"
     ],
     "network": {
@@ -73,9 +94,9 @@
         "󰤥",
         "󰤨"
       ],
-      "on-click": "kitty --class nmtui-float-term nmtui",
       "format-linked": "󰈁 {ifname} (No IP)",
       "format-wifi": "{icon} {essid}",
+      "on-click": "kitty --class nmtui-float-term nmtui",
       "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}"
     },
     "spacing": 5,
@@ -84,3 +105,4 @@
     }
   }
 ]
+

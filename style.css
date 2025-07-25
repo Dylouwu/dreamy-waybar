@@ -181,6 +181,7 @@ window#waybar {
 #custom-cycle_wall,
 #custom-ss,
 #custom-dynamic_pill,
+#custom-notification,
 #mpd {
     padding: 0 10px;
     border-radius: 15px;
@@ -442,3 +443,4 @@ label:focus {
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
+
