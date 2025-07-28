@@ -26,16 +26,42 @@
         ]
       },
       "on-click": "powermode-toggle",
+      "on-click-right": "notif PowerProfile \"Current Powermode : $(powerprofilesctl get)\"",
       "states": {
         "critical": 10,
         "warning": 20
       }
+    },
+    "cava": {
+      "bar_delimiter": 0,
+      "bars": 16,
+      "format-icons": [
+        "▁",
+        "▂",
+        "▃",
+        "▄",
+        "▅",
+        "▆",
+        "▇",
+        "█"
+      ],
+      "framerate": 240,
+      "hide_on_silence": true,
+      "higher_cutoff_freq": 5000,
+      "sleep_timer": 2
     },
     "clock": {
       "interval": 60,
       "max-length": 25,
       "timezone": "Europe/Paris",
       "tooltip-format": "<big>{:%a %d %b}</big>"
+    },
+    "custom/arrow-toggle": {
+      "format": " {icon} ",
+      "format-icons": {
+        "default": ""
+      },
+      "tooltip": false
     },
     "custom/notification": {
       "escape": true,
@@ -57,10 +83,23 @@
       "return-type": "json",
       "tooltip": false
     },
+    "group/extras": {
+      "drawer": {
+        "transition-duration": 300,
+        "transitition-left-to-right": false
+      },
+      "modules": [
+        "custom/arrow-toggle",
+        "tray",
+        "network"
+      ],
+      "orientation": "inherit"
+    },
     "hyprland/window": {
       "format": "{}",
       "icon": true,
       "icon-size": 20,
+      "max-length": 30,
       "rewrite": {
         "^(.*?)[[:space:]]*[-—|].*?$": "$1"
       }
@@ -71,15 +110,17 @@
       "format-active": " {icon} "
     },
     "margin-bottom": -11,
+    "modules-center": [
+      "cava"
+    ],
     "modules-left": [
       "hyprland/workspaces",
       "hyprland/window"
     ],
     "modules-right": [
-      "tray",
-      "network",
-      "battery",
       "group/extras",
+      "pulseaudio",
+      "battery",
       "custom/notification",
       "clock"
     ],
@@ -98,6 +139,17 @@
       "format-wifi": "{icon} {essid}",
       "on-click": "kitty --class nmtui-float-term nmtui",
       "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}"
+    },
+    "pulseaudio": {
+      "format": "{icon}",
+      "format-icons": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ],
+      "format-muted": "󰖁",
+      "on-click": "pavucontrol -t 3",
+      "scroll-step": 0.0
     },
     "spacing": 5,
     "tray": {
