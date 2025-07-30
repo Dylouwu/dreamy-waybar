@@ -242,9 +242,10 @@ window#waybar {
 
 #battery {
     color:#a6e3a1;
-    font-weight: bolder;
-    padding-left: 15px;
-    padding-right: 15px;
+    font-size: 17px;
+    padding-left: 14px;
+    padding-right: 16px;
+    border-radius: 15px;
 }
 
 @keyframes blink {

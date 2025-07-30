@@ -1,40 +1,43 @@
 [
   {
     "battery": {
-      "format": "{icon} {capacity}%",
+      "format": "{icon}",
+      "format-full": "󱟢",
       "format-icons": {
         "charging": [
+          "󰢜",
           "󰂆",
+          "󰂇",
           "󰂈",
+          "󰢝",
           "󰂉",
+          "󰢞",
           "󰂊",
+          "󰂋",
           "󰂅"
         ],
         "default": [
+          "󰁺",
           "󰁻",
+          "󰁼",
           "󰁽",
+          "󰁾",
           "󰁿",
+          "󰂀",
           "󰂁",
+          "󰂂",
           "󰁹"
-        ],
-        "plugged": [
-          "󰂆",
-          "󰂈",
-          "󰂉",
-          "󰂊",
-          "󰂅"
         ]
       },
       "on-click": "powermode-toggle",
       "on-click-right": "notif PowerProfile \"Current Powermode : $(powerprofilesctl get)\"",
       "states": {
-        "critical": 10,
-        "warning": 20
+        "critical": 10
       }
     },
     "cava": {
       "bar_delimiter": 0,
-      "bars": 16,
+      "bars": 32,
       "format-icons": [
         "▁",
         "▂",
@@ -47,14 +50,26 @@
       ],
       "framerate": 240,
       "hide_on_silence": true,
-      "higher_cutoff_freq": 5000,
-      "sleep_timer": 2
+      "higher_cutoff_freq": 8000,
+      "input_delay": 2,
+      "lower_cutoff_freq": 100,
+      "sleep_timer": 2,
+      "stereo": true
     },
     "clock": {
+      "calendar": {
+        "format": {
+          "days": "<span color='#cdd6f4'><b>{}</b></span>",
+          "months": "<b>{}</b>",
+          "today": "<span color='#e7bbe4'><b>{}</b></span>",
+          "weekdays": "<span color='#7cd37c'><b>{}</b></span>"
+        },
+        "mode": "month"
+      },
       "interval": 60,
       "max-length": 25,
       "timezone": "Europe/Paris",
-      "tooltip-format": "<big>{:%a %d %b}</big>"
+      "tooltip-format": "<span>{calendar}</span>"
     },
     "custom/arrow-toggle": {
       "format": " {icon} ",
@@ -79,7 +94,6 @@
         "notification": "󰂚"
       },
       "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
       "return-type": "json",
       "tooltip": false
     },
@@ -157,4 +171,3 @@
     }
   }
 ]
-
