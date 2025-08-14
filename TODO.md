@@ -1,7 +1,7 @@
-## Main things to do :
-- modify swaync (remove big borders)
-- custom script to change wallpaper and more 
+## Main things to do
+- custom script to change wallpaper and more
 
-## Other ideas:
+## Other ideas
+
 - background arrow + app + further + white?
 - change position osd
